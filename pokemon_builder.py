@@ -3,9 +3,9 @@ import requests
 base_url = "https://pokeapi.co/api/v2/"
 
 class Pokemon:
-    def __init__(self, name):
+    def __init__(self, name, types):
         self.name = name
-        # self.type = type
+        self.types = types
         # self.ability = ability
     
     # @ability.setter
@@ -19,7 +19,7 @@ def get_pokemon_info(name):
     response = requests.get(url)
     
     if response.status_code == 200:
-        print("Pokemon found.")
+        # print("Pokemon found.")
         pokemon_data = response.json()
         return pokemon_data
     else:
@@ -30,9 +30,16 @@ if __name__ == "__main__":
     pokemon_info = get_pokemon_info(pokemon_name)
 
     if pokemon_info:
-        pokemon = Pokemon(pokemon_info["name"])
+        #since types can be one or more, we need to loop through the types and store them as a 
+        types = [t["type"]["name"] for t in pokemon_info["types"]]
+        pokemon = Pokemon(pokemon_info["name"], types)
         #, pokemon_info["type"], pokemon_info["ability"]
-        print(f"Pokemon Name: {pokemon.name.capitalize()}")
+        print(f"Name: {pokemon.name.capitalize()}")
+        #need to loop AGAIN to capitalize all values :(
+        print(f"Type(s): {', '.join([t.capitalize() for t in pokemon.types])}")
+
+        #only capitalized the first value
+        # print(f"Type(s): {', '.join(pokemon.types).capitalize()}")
 
 # if pokemon_info:
 #     print(f"Name: {pokemon_info["name"].capitalize()}")
