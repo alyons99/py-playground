@@ -68,18 +68,22 @@ class Stopwatch(QWidget):
         self.timer.stop()
 
     def clear(self):
+        #reset the time
         self.timer.stop()
         self.time = QTime(0, 0, 0, 0)
         self.time_label.setText(self.format_time(self.time))
 
     def format_time(self, time):
+        #formats the time
         hours = time.hour()
         minutes = time.minute()
         second = time.second()
+        #integer division to make sure its only 2 figs
         ms = time.msec() // 10
 
         return f"{hours:02}:{minutes:02}:{second:02}.{ms:02}"
 
+    #updates every 10ms
     def update(self):
         self.time = self.time.addMSecs(10)
         self.time_label.setText(self.format_time(self.time))
