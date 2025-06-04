@@ -46,11 +46,11 @@ def select_ability(available_abilities):
 
 def select_moves(available_moves):
     chosen_moves = []
-    print("Available Moves (showing 50 at a time):")
+    print("Available Moves (showing 100 at a time):")
 
-    # Display moves in batches of 50
-    for i in range(0, len(available_moves), 50):  
-        print("\n".join(f"{idx + 1}. {move.capitalize()}" for idx, move in enumerate(available_moves[i:i+50], i)))
+    # Display moves in batches of 100
+    for i in range(0, len(available_moves), 100):  
+        print("\n".join(f"{idx + 1}. {move.capitalize()}" for idx, move in enumerate(available_moves[i:i+100], i)))
         if input("Press Enter to see more or type 'done' to finish: ").lower() == "done":
             break
 
