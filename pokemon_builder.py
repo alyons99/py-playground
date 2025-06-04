@@ -24,16 +24,20 @@ class Pokemon:
         else:
             raise ValueError(f"Invalid Ability.")
 
-def get_pokemon_info(name):
-    url = f"{base_url}/pokemon/{name}"
-    response = requests.get(url)
-    
-    if response.status_code == 200:
-        # print("Pokemon found.")
-        pokemon_data = response.json()
-        return pokemon_data
-    else:
-        print(f"Failed to retrieve data. Reponse code: {response.status_code}")
+def get_pokemon_info():
+    while True:
+        name = input("Enter a Pokemon: ").lower().strip()
+        url = f"{base_url}/pokemon/{name}"
+        response = requests.get(url)
+
+
+        if response.status_code == 200:
+            # print("Pokemon found.")
+            pokemon_data = response.json()
+            return pokemon_data
+        else:
+            print(f"Failed to retrieve data for {name}. Reponse code: {response.status_code}.\nPlease try again.")
+        
 
 def select_nature():
     nature_options = [
@@ -113,8 +117,7 @@ def select_moves(available_moves):
 
 
 if __name__ == "__main__":
-    pokemon_name = input("Enter a pokemon name: ").lower()
-    pokemon_info = get_pokemon_info(pokemon_name)
+    pokemon_info = get_pokemon_info()
 
     if pokemon_info:
         #collecting types, abilities, and moves
@@ -127,6 +130,7 @@ if __name__ == "__main__":
 
         pokemon = Pokemon(pokemon_info["name"], types, chosen_nature, abilities, selected_moves)
         pokemon.ability = chosen_ability
+
 
         # #, pokemon_info["type"], pokemon_info["ability"]
         # print(f"Name: {pokemon.name.capitalize()}")
