@@ -3,9 +3,10 @@ import requests
 base_url = "https://pokeapi.co/api/v2/"
 
 class Pokemon:
-    def __init__(self, name, types, abilities, moves):
+    def __init__(self, name, types, nature, abilities, moves):
         self.name = name
         self.types = types
+        self.nature = nature
         self.abilities = abilities
         self._ability = None
         self.moves = moves
@@ -77,10 +78,11 @@ if __name__ == "__main__":
         types = [t["type"]["name"] for t in pokemon_info["types"]]
         abilities = [a["ability"]["name"] for a in pokemon_info["abilities"]]
         moves = [m["move"]["name"] for m in pokemon_info["moves"]]
+        chosen_nature = input("Enter a nature: ")
         chosen_ability = select_ability(abilities)
         selected_moves = select_moves(moves)
 
-        pokemon = Pokemon(pokemon_info["name"], types, abilities, selected_moves)
+        pokemon = Pokemon(pokemon_info["name"], types, chosen_nature, abilities, selected_moves)
         pokemon.ability = chosen_ability
 
         # #, pokemon_info["type"], pokemon_info["ability"]
@@ -97,7 +99,7 @@ if __name__ == "__main__":
     
 
         print("*****************************************")
-        print(f"Your {pokemon.name.capitalize()}: \nType: {', '.join([t.capitalize() for t in pokemon.types])} \nAbility: {pokemon.ability.capitalize()}\nMoves: {', '.join([m.capitalize() for m in pokemon.moves])}")
+        print(f"Your {pokemon.name.capitalize()}: \nType: {', '.join([t.capitalize() for t in pokemon.types])} \nNature: {chosen_nature}\nAbility: {pokemon.ability.capitalize()}\nMoves: {', '.join([m.capitalize() for m in pokemon.moves])}")
         print("*****************************************")
 
         # pick_ability()
