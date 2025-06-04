@@ -5,7 +5,7 @@ from PyQt5.QtCore import QTime, QTimer, Qt
 class Dig_Clock(QWidget):
     def __init__(self):
         super().__init__()
-        self.time_label = QLabel("12:00:00",self)
+        self.time_label = QLabel(self)
         self.timer = QTimer(self)
         self.initUI()
 
@@ -18,6 +18,19 @@ class Dig_Clock(QWidget):
         self.setLayout(vbox)
 
         self.time_label.setAlignment(Qt.AlignCenter)
+        self.time_label.setStyleSheet("font-size: 100px;"
+                                      "color: #39FF14;"
+                                    )
+                                      #"background-color: black;") redundant
+        self.setStyleSheet("background-color: black;")
+
+        self.timer.timeout.connect(self.updateTime)
+        self.timer.start(1000)
+        #self.updateTime()
+
+    def updateTime(self):
+        curr = QTime.currentTime().toString("hh:mm:ss AP")
+        self.time_label.setText(curr)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
