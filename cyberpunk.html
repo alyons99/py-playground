@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="cyberpunk_style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETRUNNER TERMINAL v2.1.x - ACCESS GRANTED</title>
+</head>
+<body>
+    <div class="matrix-bg" id="matrixBg"></div>
+    
+    <div class="header">
+        <div class="site-title glitch">NETRUNNER TERMINAL v2.1.x</div>
+        <div class="access-info">C\User\******* | ACCESS LEVEL: ADMINISTRATOR | STATUS: CONNECTED</div>
+    </div>
+    
+    <div class="nav-container">
+        <div class="nav-tabs">
+            <div class="nav-tab active" onclick="showTab('news')">NEWS FEED</div>
+            <div class="nav-tab" onclick="showTab('shop')">BLACK MARKET</div>
+            <div class="nav-tab" onclick="showTab('jobs')">JOB BOARD</div>
+            <div class="nav-tab" onclick="showTab('terminal')">TERMINAL</div>
+        </div>
+    </div>
+    
+    <div class="content-area">
+        <div id="news" class="tab-content active">
+            <div class="news-item">
+                <div class="news-date">2020.06.05 - 14:32:07</div>
+                <div class="news-header">BREAKING: Arasaka Tower Security Breach</div>
+                <div class="news-content">
+                    Unknown netrunners infiltrated Arasaka's ice yesterday, making off with classified data. Corporate security is on high alert. All freelancers advised to lay low for the next 48 hours.
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">2020.06.04 - 09:15:42</div>
+                <div class="news-header">New Firmware Update for Militech Cyberdeck</div>
+                <div class="news-content">
+                    Militech releases patch 4.7.2 for their latest cyberdeck line. Fixes critical vulnerability in the sandboxing protocol. Download available on the secure channels.
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">2020.06.03 - 22:48:19</div>
+                <div class="news-header">Street Vendor Murdered in Pacifica</div>
+                <div class="news-content">
+                    Local ripperdoc found flatlined in his clinic. NCPD claims gang violence, but word on the street suggests corpo involvement. Watch your backs, choombas.
+                </div>
+            </div>
+        </div>
+        
+        <div id="shop" class="tab-content">
+            <div class="item-grid">
+                <div class="item-card">
+                    <div class="item-name">Zetatech Cyberdeck Mk.VII</div>
+                    <div class="item-description">
+                        Military-grade cyberdeck with enhanced ICE-breaking capabilities. Comes with pre-installed demon programs and hardened security protocols.
+                    </div>
+                    <div class="item-price">Price: 45,000 eb</div>
+                </div>
+                
+                <div class="item-card">
+                    <div class="item-name">Biotech Neural Interface</div>
+                    <div class="item-description">
+                        Direct neural connection port. Allows for faster data transfer and reduced latency. Installation requires licensed ripperdoc.
+                    </div>
+                    <div class="item-price">Price: 12,000 eb</div>
+                </div>
+                
+                <div class="item-card">
+                    <div class="item-name">Stealth Suit (Thermoptic)</div>
+                    <div class="item-description">
+                        Cutting-edge thermoptic camouflage suit. Provides near-invisibility to thermal and optical sensors. Battery life: 4 hours active use.
+                    </div>
+                    <div class="item-price">Price: 78,000 eb</div>
+                </div>
+                
+                <div class="item-card">
+                    <div class="item-name">Encrypted Commlink</div>
+                    <div class="item-description">
+                        Quantum-encrypted communication device. Untraceable and unhackable. Perfect for sensitive operations.
+                    </div>
+                    <div class="item-price">Price: 8,500 eb</div>
+                </div>
+                
+                <div class="item-card">
+                    <div class="item-name">Smartgun Targeting System</div>
+                    <div class="item-description">
+                        Cybernetic targeting enhancement. Increases accuracy by 300% and provides trajectory prediction. Compatible with most firearms.
+                    </div>
+                    <div class="item-price">Price: 25,000 eb</div>
+                </div>
+                
+                <div class="item-card">
+                    <div class="item-name">Memory Chip (Classified)</div>
+                    <div class="item-description">
+                        Stolen corporate data chip. Contents unknown. Buyer assumes all risks. No refunds.
+                    </div>
+                    <div class="item-price">Price: 150,000 eb</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="jobs" class="tab-content">
+            <div class="job-listing">
+                <div class="job-danger">HIGH RISK</div>
+                <div class="job-title">Data Extraction - Biotechnica Labs</div>
+                <div class="job-client">Client: Anonymous</div>
+                <div class="job-description">
+                    Need experienced netrunner to infiltrate Biotechnica's research division and extract files on Project Lazarus. High-level ICE expected. Team of 3-4 recommended.
+                </div>
+                <div class="job-pay">Payment: 200,000 eb (split)</div>
+            </div>
+            
+            <div class="job-listing">
+                <div class="job-danger">MEDIUM RISK</div>
+                <div class="job-title">Corporate Espionage - Rival Acquisition</div>
+                <div class="job-client">Client: Militech Representative</div>
+                <div class="job-description">
+                    Acquire competitor's product specifications before their quarterly announcement. Stealth approach preferred. Clean extraction essential.
+                </div>
+                <div class="job-pay">Payment: 75,000 eb</div>
+            </div>
+            
+            <div class="job-listing">
+                <div class="job-danger">LOW RISK</div>
+                <div class="job-title">Personal Security Detail</div>
+                <div class="job-client">Client: Sarah Chen</div>
+                <div class="job-description">
+                    Provide protection for former corpo exec during testimony. 3-day assignment. Discrete professionals only.
+                </div>
+                <div class="job-pay">Payment: 15,000 eb</div>
+            </div>
+            
+            <div class="job-listing">
+                <div class="job-danger">EXTREME RISK</div>
+                <div class="job-title">Wetwork - Arasaka Executive</div>
+                <div class="job-client">Client: [REDACTED]</div>
+                <div class="job-description">
+                    Eliminate high-value target. Location: Neo-Tokyo. Heavy security expected. Extraction not guaranteed.
+                </div>
+                <div class="job-pay">Payment: 500,000 eb</div>
+            </div>
+        </div>
+        
+        <div id="terminal" class="tab-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span>system@netrunner-terminal</span>
+                    <div class="terminal-buttons">
+                        <div class="terminal-button"></div>
+                        <div class="terminal-button"></div>
+                        <div class="terminal-button"></div>
+                    </div>
+                </div>
+                <div class="terminal-content">
+                    <div>Welcome to NetRunner Terminal v2.1</div>
+                    <div>Connection established to Night City Network</div>
+                    <div>Encryption: ACTIVE | Trace protection: ENABLED</div>
+                    <div><br></div>
+                    <div>Available commands:</div>
+                    <div>- chmod 755 /home/netrunner/tools/</div>
+                    <div>- ./exploit.sh --target=192.168.1.1 --port=443</div>
+                    <div>- grep -r "password" /var/log/ | head -20</div>
+                    <div>- ps aux | grep daemon | awk '{print $2}'</div>
+                    <div><br></div>
+                    <div>C\Users\*******:~$ <span class="cursor">_</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Matrix rain effect
+        function createMatrixRain() {
+            const matrixBg = document.getElementById('matrixBg');
+            const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:,.<>?';
+            
+            for (let i = 0; i < 50; i++) {
+                const column = document.createElement('div');
+                column.className = 'matrix-column';
+                column.style.left = Math.random() * 100 + '%';
+                column.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                column.style.animationDelay = Math.random() * 2 + 's';
+                
+                let text = '';
+                for (let j = 0; j < 20; j++) {
+                    text += characters.charAt(Math.floor(Math.random() * characters.length)) + '<br>';
+                }
+                column.innerHTML = text;
+                
+                matrixBg.appendChild(column);
+            }
+        }
+        
+        // Tab switching
+        function showTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Remove active class from all nav tabs
+            const navTabs = document.querySelectorAll('.nav-tab');
+            navTabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked nav tab
+            event.target.classList.add('active');
+        }
+        
+        // Initialize matrix effect
+        createMatrixRain();
+        
+        // Glitch effect for title
+        setInterval(() => {
+            const title = document.querySelector('.site-title');
+            if (Math.random() < 0.1) {
+                title.style.color = '#ff0000';
+                setTimeout(() => {
+                    title.style.color = '#00ff00';
+                }, 100);
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
